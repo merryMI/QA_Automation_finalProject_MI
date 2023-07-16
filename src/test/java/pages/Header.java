@@ -9,11 +9,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Header {
+public class Header extends BasePage {
 
-     private WebDriver driver;
      private final String LOGIN_URL = "http://training.skillo-bg.com/users/login";
-     WebDriverWait wait;
 
     @FindBy(id = "homeIcon")
     WebElement logo;
@@ -25,23 +23,21 @@ public class Header {
     WebElement loginBtn;
 
     public Header(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
     public void clickToLogo(){
-        wait.until(ExpectedConditions.elementToBeClickable(logo));
-        logo.click();
+        clickBtn(logo);
     }
 
     public void clickToHome(){
-        wait.until(ExpectedConditions.elementToBeClickable(homeBtn));
-        homeBtn.click();
+        clickBtn(homeBtn);
     }
     public void clickToLogin(){
-        wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
-        loginBtn.click();
+        clickBtn(loginBtn);
+
     }
     public void verifyLoginUrl(){
         wait.until(ExpectedConditions.urlContains(LOGIN_URL));

@@ -6,13 +6,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class HomePage {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class HomePage extends BasePage{
+
     private final String URL = "http://training.skillo-bg.com/posts/all";
 
     public HomePage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
