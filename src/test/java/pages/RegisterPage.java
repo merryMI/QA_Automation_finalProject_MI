@@ -33,6 +33,14 @@ WebElement confirmPassword;
 
 @FindBy(id = "sign-in-button")
 WebElement signUpBtn;
+@FindBy(css = ".toast-message")
+WebElement toastElement;
+
+@FindBy(css = ".invalid-feedback")
+WebElement invalidFeedback;
+
+@FindBy(css = ".is-valid")
+WebElement isValid;
     // 7. Enter a username with less than 2 characters. Validate that a red check is displayed after entering the value.
     // 8. Enter email. Validate that a red check is displayed after entering the value.
     // 9. Enter a password with less than 6 characters. Validate that a red check is displayed after entering the value.
@@ -47,13 +55,7 @@ WebElement signUpBtn;
         PageFactory.initElements(driver, this);
     }
 
-    public void enterUserNameField(WebElement userName, String value){
-    visibilityOf(userName,value);
-    }
 
-   public String getText(){
-       return getElementText(signUpBtn);
-   }
    public void enterUserName(String name){
        visibilityOf(userName, name);
    }
@@ -71,5 +73,17 @@ WebElement signUpBtn;
        clickBtn(signUpBtn);
 
    }
+   public String failedToastMessage(){
+       return getElementText(toastElement);
+   }
+    public String failedFieldMessage(){
+        return getElementText(invalidFeedback);
+    }
+
+    public void correctFieldMessage(){
+         populateField(isValid);
+    }
+
+
 
 }

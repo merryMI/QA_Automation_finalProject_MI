@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10263060-b8f5-4c2c-b785-80e573683f1f" name="Changes" comment="Header, HomePage,HomeTest, HeaderTest">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/RegisterPage" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/RegisterPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/RegisterTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/RegisterPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RegisterTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RegisterTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testing.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,44 +51,47 @@
       <command value="mvn clean" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.RegisterTests.sendRegisteredUser">
-    <configuration name="HeaderTest.checkHeaderBtn" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.RegisterTests.checkForCorrectField">
+    <configuration name="C:/Users/Merry/Desktop/QA_Automation/java/QA_Automation_finalProject_MI/testing.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="QA_Automation_finalProject_MI" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.HeaderTest" />
-      <option name="METHOD_NAME" value="checkHeaderBtn" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testing.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomeTest.checkHomeURL" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="RegisterTests.checkForCorrectField" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="QA_Automation_finalProject_MI" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.HomeTest" />
-      <option name="METHOD_NAME" value="checkHomeURL" />
+      <option name="MAIN_CLASS_NAME" value="tests.RegisterTests" />
+      <option name="METHOD_NAME" value="checkForCorrectField" />
+      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="true" />
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegisterTests.sendRegisteredUser" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="RegisterTests.incorrectConfPassFieldsRedMessage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="QA_Automation_finalProject_MI" />
       <extension name="coverage">
         <pattern>
@@ -100,7 +101,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.RegisterTests" />
-      <option name="METHOD_NAME" value="sendRegisteredUser" />
+      <option name="METHOD_NAME" value="incorrectConfPassFieldsRedMessage" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -108,11 +109,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RegisterTests.incorrectPassFieldsRedMessage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="QA_Automation_finalProject_MI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RegisterTests" />
+      <option name="METHOD_NAME" value="incorrectPassFieldsRedMessage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterTests.incorrectUserNameFieldsRedMessage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="QA_Automation_finalProject_MI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RegisterTests" />
+      <option name="METHOD_NAME" value="incorrectUserNameFieldsRedMessage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="TestNG.C:/Users/Merry/Desktop/QA_Automation/java/QA_Automation_finalProject_MI/testing.xml" />
+      <item itemvalue="TestNG.RegisterTests.checkForCorrectField" />
+      <item itemvalue="TestNG.RegisterTests.incorrectConfPassFieldsRedMessage" />
+      <item itemvalue="TestNG.RegisterTests.incorrectPassFieldsRedMessage" />
+      <item itemvalue="TestNG.RegisterTests.incorrectUserNameFieldsRedMessage" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.RegisterTests.sendRegisteredUser" />
-        <item itemvalue="TestNG.HeaderTest.checkHeaderBtn" />
-        <item itemvalue="TestNG.HomeTest.checkHomeURL" />
+        <item itemvalue="TestNG.RegisterTests.checkForCorrectField" />
+        <item itemvalue="TestNG.C:/Users/Merry/Desktop/QA_Automation/java/QA_Automation_finalProject_MI/testing.xml" />
+        <item itemvalue="TestNG.RegisterTests.incorrectUserNameFieldsRedMessage" />
+        <item itemvalue="TestNG.RegisterTests.incorrectConfPassFieldsRedMessage" />
+        <item itemvalue="TestNG.RegisterTests.incorrectPassFieldsRedMessage" />
       </list>
     </recent_temporary>
   </component>
@@ -146,16 +192,5 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Header, HomePage,HomeTest, HeaderTest" />
     <option name="LAST_COMMIT_MESSAGE" value="Header, HomePage,HomeTest, HeaderTest" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/tests/RegisterTests.java</url>
-          <line>87</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

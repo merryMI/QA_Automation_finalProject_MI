@@ -15,53 +15,25 @@ import pages.RegisterPage;
 
 import java.time.Duration;
 
-public class RegisterTests {
+public class RegisterTests extends BaseTest{
 
     private WebDriver driver;
 
-    @BeforeMethod
-    public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-    }
+
 
     @DataProvider(name = "registeredUser")
 
     public Object[][] dpMethod() {
         return new Object[][]{
-                {"pomd","a@a.bg","123456","123456"}
+                {"newsNewsTest2s3","newsTest225@abv.bg","123456","123456"}
         };
     }
 
-    @Test(dataProvider = "registeredUser")
+    @Test(dataProvider = "registeredUser", dependsOnMethods = "navigateToRegisterPage")
 
     public void sendRegisteredUser(String username, String email, String password, String confirmPassword) {
-        System.out.println("1. Navigate to home page");
-        HomePage homePage = new HomePage(driver);
-
-        homePage.navigateTo();
-
-        System.out.println("2. Navigate to login page");
-        Header headerPage = new Header(driver);
-        headerPage.clickToLogin();
-
-        System.out.println("3. Check the URL is correct");
-        headerPage.verifyLoginUrl();
-
-        // 4. Check the Registration link that is visible and clickable.
-        System.out.println("4. Check the Registration link that is visible and clickable.");
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.registerBtn();
-
-        System.out.println("5. Sign in is displayed ");
-        String headerText = loginPage.getSignInHeaderText();
-        Assert.assertEquals(headerText, "Sign up", "Incorrect Sign up header text!");
 
         System.out.println("6. Enter user name");
-        RegisterPage registerPage = new RegisterPage(driver);
         registerPage.enterUserName(username);
 
         System.out.println("7. Enter mail address");
@@ -81,11 +53,130 @@ public class RegisterTests {
 
 
     }
+    @Test
+    public void navigateToRegisterPage(){
+        System.out.println("1. Navigate to home page");
+        homePage.navigateTo();
 
-    @AfterTest
+        System.out.println("2. Navigate to login page");
+        headerPage.clickToLogin();
 
-    public void closed() {
-        driver.close();
+        System.out.println("3. Check the URL is correct");
+        headerPage.verifyLoginUrl();
+
+        System.out.println("4. Check the Registration link that is visible and clickable.");
+        loginPage.registerBtn();
+
+        System.out.println("5. Sign in is displayed ");
+        String headerText = loginPage.getSignInHeaderText();
+        Assert.assertEquals(headerText, "Sign up", "Incorrect Sign up header text!");
+
+
+    }
+@Test(dependsOnMethods = "navigateToRegisterPage")
+    public void sendEmptyForm()
+    {
+        System.out.println("6.Click Sign In btm with empty fields");
+        registerPage.clickignUpBtn();
+
+        System.out.println("7. Validate an unsuccessful pop-up message.");
+
+        String message = registerPage.failedToastMessage().trim();
+        Assert.assertEquals(message, "Registration failed!", "Registration is successful: " + message);
+
+
+    }
+    @DataProvider(name = "incorrectFieldValue")
+
+    public Object[][] incorrectValue() {
+        return new Object[][]{
+                {"k", "m", "12","54"}
+        };
+    }
+    @Test(dataProvider = "incorrectFieldValue", dependsOnMethods = "navigateToRegisterPage")
+
+    public void incorrectFields(String username, String email, String password, String confirmPassword) {
+
+        System.out.println("6. Enter user name");
+        registerPage.enterUserName(username);
+
+        System.out.println("7. Enter mail address");
+        registerPage.enterEmail(email);
+
+        System.out.println("8. Enter password");
+        registerPage.enterPass(password);
+
+        System.out.println("9. Enter confirm-password");
+        registerPage.enterConfirmPassword(confirmPassword);
+
+        System.out.println("10. Click sign in btn");
+        registerPage.clickignUpBtn();
+
+        System.out.println("11. Validate an unsuccessful pop-up message.");
+
+        String message = registerPage.failedToastMessage().trim();
+        Assert.assertEquals(message, "Registration failed!", "Registration is successful: " + message);
+
+
+    }
+
+    @Test(dataProvider = "incorrectFieldValue", dependsOnMethods = "navigateToRegisterPage", groups = "incorrectFields")
+
+    public void incorrectUserNameFieldsRedMessage(String username, String email,String password, String confirmPassword) {
+        System.out.println("6. Enter user name");
+        registerPage.enterUserName(username);
+        String nameMessage = registerPage.failedFieldMessage().trim();
+        Assert.assertEquals(nameMessage, "Minimum 2 characters !");
+
+    }
+    @Test(dataProvider = "incorrectFieldValue", dependsOnMethods = "navigateToRegisterPage", groups = "incorrectFields")
+
+    public void incorrectEmailFieldsRedMessage(String username, String email,String password, String confirmPassword ) {
+
+        System.out.println("7. Enter mail address");
+        registerPage.enterEmail(email);
+        String emailMessage = registerPage.failedFieldMessage().trim();
+        Assert.assertEquals(emailMessage, "Email invalid!");
+
+    }
+    @Test(dataProvider = "incorrectFieldValue", dependsOnMethods = "navigateToRegisterPage", groups = "incorrectFields")
+    public void incorrectPassFieldsRedMessage(String username, String email,String password, String confirmPassword) {
+
+        System.out.println("8. Enter password");
+        registerPage.enterPass(password);
+        String passMessage = registerPage.failedFieldMessage().trim();
+        Assert.assertEquals(passMessage, "Minimum 6 characters !", "Message is: " + passMessage);
+
+    }
+    @Test(dataProvider = "incorrectFieldValue", dependsOnMethods = "navigateToRegisterPage", groups = "incorrectFields")
+    public void incorrectConfPassFieldsRedMessage(String username, String email,String password, String confirmPassword) {
+
+        System.out.println("9. Enter confirm-password");
+        registerPage.enterConfirmPassword(confirmPassword);
+        String confPassMessage = registerPage.failedFieldMessage().trim();
+        Assert.assertEquals(confPassMessage, "Passwords do not match!", "Message is: " + confPassMessage);
+
+    }
+
+    @Test(dataProvider = "registeredUser", dependsOnMethods = "navigateToRegisterPage")
+
+    public void checkForCorrectField(String username, String email,String password, String confirmPassword){
+        System.out.println("6. Check username for green tick");
+        registerPage.enterUserName(username);
+        registerPage.correctFieldMessage();
+
+        System.out.println("7. Check email for green tick");
+        registerPage.enterUserName(email);
+        registerPage.correctFieldMessage();
+
+        System.out.println("8. Check pass for green tick");
+        registerPage.enterPass(password);
+        registerPage.correctFieldMessage();
+
+        System.out.println("9. Check confirmpass for green tick");
+        registerPage.enterConfirmPassword(confirmPassword);
+        registerPage.correctFieldMessage();
+
     }
 
 }

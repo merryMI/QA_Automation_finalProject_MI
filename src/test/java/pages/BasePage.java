@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -30,11 +31,18 @@ public class BasePage {
     }
     public String getElementText(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
-        return element.getText();
+          return element.getText();
     }
     public void elementClickable(WebElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
+    }
+
+    public void populateField(WebElement element) {
+
+            String classes = element.getAttribute("class");
+            Assert.assertTrue(classes.contains("is-valid"));
+
     }
 
 
