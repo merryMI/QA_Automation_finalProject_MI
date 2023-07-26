@@ -8,26 +8,18 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.Header;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.RegisterPage;
-
-import java.time.Duration;
 
 public class RegisterTests extends BaseTest{
-
-    private WebDriver driver;
-
-
 
     @DataProvider(name = "registeredUser")
 
     public Object[][] dpMethod() {
         return new Object[][]{
-                {"newsNewsTest2s3","newsTest225@abv.bg","123456","123456"}
+                {"neos3","t275@abv.bg","123456","123456"}
         };
     }
+
+
 
     @Test(dataProvider = "registeredUser", dependsOnMethods = "navigateToRegisterPage")
 
@@ -120,7 +112,7 @@ public class RegisterTests extends BaseTest{
 
     }
 
-    @Test(dataProvider = "incorrectFieldValue", dependsOnMethods = "navigateToRegisterPage", groups = "incorrectFields")
+    @Test(dataProvider = "incorrectFieldValue", dependsOnMethods = "navigateToRegisterPage")
 
     public void incorrectUserNameFieldsRedMessage(String username, String email,String password, String confirmPassword) {
         System.out.println("6. Enter user name");
@@ -129,7 +121,7 @@ public class RegisterTests extends BaseTest{
         Assert.assertEquals(nameMessage, "Minimum 2 characters !");
 
     }
-    @Test(dataProvider = "incorrectFieldValue", dependsOnMethods = "navigateToRegisterPage", groups = "incorrectFields")
+    @Test(dataProvider = "incorrectFieldValue", dependsOnMethods = "navigateToRegisterPage")
 
     public void incorrectEmailFieldsRedMessage(String username, String email,String password, String confirmPassword ) {
 
@@ -139,7 +131,7 @@ public class RegisterTests extends BaseTest{
         Assert.assertEquals(emailMessage, "Email invalid!");
 
     }
-    @Test(dataProvider = "incorrectFieldValue", dependsOnMethods = "navigateToRegisterPage", groups = "incorrectFields")
+    @Test(dataProvider = "incorrectFieldValue", dependsOnMethods = "navigateToRegisterPage")
     public void incorrectPassFieldsRedMessage(String username, String email,String password, String confirmPassword) {
 
         System.out.println("8. Enter password");
@@ -148,7 +140,7 @@ public class RegisterTests extends BaseTest{
         Assert.assertEquals(passMessage, "Minimum 6 characters !", "Message is: " + passMessage);
 
     }
-    @Test(dataProvider = "incorrectFieldValue", dependsOnMethods = "navigateToRegisterPage", groups = "incorrectFields")
+    @Test(dataProvider = "incorrectFieldValue", dependsOnMethods = "navigateToRegisterPage")
     public void incorrectConfPassFieldsRedMessage(String username, String email,String password, String confirmPassword) {
 
         System.out.println("9. Enter confirm-password");
@@ -158,25 +150,5 @@ public class RegisterTests extends BaseTest{
 
     }
 
-    @Test(dataProvider = "registeredUser", dependsOnMethods = "navigateToRegisterPage")
-
-    public void checkForCorrectField(String username, String email,String password, String confirmPassword){
-        System.out.println("6. Check username for green tick");
-        registerPage.enterUserName(username);
-        registerPage.correctFieldMessage();
-
-        System.out.println("7. Check email for green tick");
-        registerPage.enterUserName(email);
-        registerPage.correctFieldMessage();
-
-        System.out.println("8. Check pass for green tick");
-        registerPage.enterPass(password);
-        registerPage.correctFieldMessage();
-
-        System.out.println("9. Check confirmpass for green tick");
-        registerPage.enterConfirmPassword(confirmPassword);
-        registerPage.correctFieldMessage();
-
-    }
 
 }

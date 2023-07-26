@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10263060-b8f5-4c2c-b785-80e573683f1f" name="Changes" comment="Header, HomePage,HomeTest, HeaderTest">
+    <list default="true" id="10263060-b8f5-4c2c-b785-80e573683f1f" name="Changes" comment="RegisterTests with bug reporting">
+      <change afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/RegisterPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/RegisterTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RegisterTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testing.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,13 +31,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Merry\Desktop\QA_Automation\java\QA_Automation_finalProject_MI\src\test\java" />
@@ -51,13 +51,25 @@
       <command value="mvn clean" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.RegisterTests.checkForCorrectField">
-    <configuration name="C:/Users/Merry/Desktop/QA_Automation/java/QA_Automation_finalProject_MI/testing.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.C:/Users/Merry/Desktop/QA_Automation/java/QA_Automation_finalProject_MI/testng.xml">
+    <configuration name="C:/Users/Merry/Desktop/QA_Automation/java/QA_Automation_finalProject_MI/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="QA_Automation_finalProject_MI" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testing.xml" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
-      <listeners />
+      <listeners>
+        <listener class="org.testng.reporters.EmailableReporter" />
+        <listener class="org.testng.reporters.FailedReporter" />
+      </listeners>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -109,7 +121,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegisterTests.incorrectPassFieldsRedMessage" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="RegisterTests.incorrectFields" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="QA_Automation_finalProject_MI" />
       <extension name="coverage">
         <pattern>
@@ -119,7 +131,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.RegisterTests" />
-      <option name="METHOD_NAME" value="incorrectPassFieldsRedMessage" />
+      <option name="METHOD_NAME" value="incorrectFields" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -146,19 +158,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.C:/Users/Merry/Desktop/QA_Automation/java/QA_Automation_finalProject_MI/testing.xml" />
+      <item itemvalue="TestNG.RegisterTests.incorrectFields" />
+      <item itemvalue="TestNG.C:/Users/Merry/Desktop/QA_Automation/java/QA_Automation_finalProject_MI/testng.xml" />
       <item itemvalue="TestNG.RegisterTests.checkForCorrectField" />
       <item itemvalue="TestNG.RegisterTests.incorrectConfPassFieldsRedMessage" />
-      <item itemvalue="TestNG.RegisterTests.incorrectPassFieldsRedMessage" />
       <item itemvalue="TestNG.RegisterTests.incorrectUserNameFieldsRedMessage" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.RegisterTests.checkForCorrectField" />
-        <item itemvalue="TestNG.C:/Users/Merry/Desktop/QA_Automation/java/QA_Automation_finalProject_MI/testing.xml" />
+        <item itemvalue="TestNG.C:/Users/Merry/Desktop/QA_Automation/java/QA_Automation_finalProject_MI/testng.xml" />
         <item itemvalue="TestNG.RegisterTests.incorrectUserNameFieldsRedMessage" />
+        <item itemvalue="TestNG.RegisterTests.incorrectFields" />
+        <item itemvalue="TestNG.RegisterTests.checkForCorrectField" />
         <item itemvalue="TestNG.RegisterTests.incorrectConfPassFieldsRedMessage" />
-        <item itemvalue="TestNG.RegisterTests.incorrectPassFieldsRedMessage" />
       </list>
     </recent_temporary>
   </component>
@@ -185,12 +197,25 @@
       <option name="project" value="LOCAL" />
       <updated>1689016296738</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="RegisterTests with bug reporting">
+      <created>1690330557071</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690330557071</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Header, HomePage,HomeTest, HeaderTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Header, HomePage,HomeTest, HeaderTest" />
+    <MESSAGE value="RegisterTests with bug reporting" />
+    <option name="LAST_COMMIT_MESSAGE" value="RegisterTests with bug reporting" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/QA_Automation_finalProject_MI$RegisterTests_incorrectUserNameFieldsRedMessage.ic" NAME="RegisterTests.incorrectUserNameFieldsRedMessage Coverage Results" MODIFIED="1690333578601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>tests.*</FILTER>
+    </SUITE>
   </component>
 </project>
